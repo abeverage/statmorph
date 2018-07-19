@@ -2338,7 +2338,7 @@ class SourceMorphology(object):
 
         # Since model fitting can be computationally expensive (especially
         # with a large PSF), only do it when the other measurements are OK.
-        if self.flag == 1:
+        if self.flag > 100:
             warnings.warn('[sersic] Skipping Sersic fit...',
                           AstropyUserWarning)
             self.flag_sersic = 1
